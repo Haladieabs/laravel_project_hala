@@ -42,29 +42,56 @@
             <h1 class="title" style="color: #fd7e14;">Sign up</h1>
             <p class="caption mb-4">Create your account in seconds.</p>
 
-            <form action="#" class="pt-3">
-
+            <form action="{{route('store')}}" method="post" class="pt-3">
+                @csrf
                 <div class="form-floating">
-                    <label for="name">Full Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your Full Name">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your Full Name" name="fname">
+                    @if ($errors->has('name'))
+                    <p class="alert alert-danger ">{{ $errors->first('name') }}</p>
+                    @endif
+                </div>
+                <div class="form-floating">
+                    <label for="name">Last Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your Full Name" name="lname">
+                    @if ($errors->has('lanem'))
+                    <p class="alert alert-danger ">{{ $errors->first('lname') }}</p>
+                    @endif
                 </div>
 
                 <div class="form-floating">
                     <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your Email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter your Email" name="email">
+                    @if ($errors->has('email'))
+                    <p class="alert alert-danger ">{{ $errors->first('email') }}</p>
+                    @endif
+                    
+                </div>
+                <div class="form-floating">
+                    <label for="email">Phone Number</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter your Email" name="phone">
+                    @if ($errors->has('phone'))
+                    <p class="alert alert-danger ">{{ $errors->first('phone') }}</p>
+                    @endif
                     
                 </div>
 
                 <div class="form-floating">
                     <span class="password-show-toggle js-password-show-toggle" style="margin-top: 2rem;"><span class="uil"></span></span>
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your Password">
+                    <input type="password" class="form-control" id="password" placeholder="Enter your Password" name="password">
+                    @if ($errors->has('password'))
+                    <p class="alert alert-danger ">{{ $errors->first('password') }}</p>
+                    @endif
                 </div>
 
                 <div class="form-floating">
                     <span class="password-show-toggle js-password-show-toggle" style="margin-top: 2rem;"><span class="uil"></span></span>
                     <label for="password">confirm Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="confirm your Password">
+                    <input type="password" class="form-control" id="password" placeholder="confirm your Password" name="confirm_password">
+                    @if ($errors->has('confirm_password'))
+                    <p class="alert alert-danger ">{{ $errors->first('confirm_password') }}</p>
+                    @endif
                 </div>
 
                 <!-- <div class="d-flex justify-content-between">
