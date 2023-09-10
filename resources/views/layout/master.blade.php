@@ -84,8 +84,7 @@
               <h2 class="ftco-heading-2">Have a Questions?</h2>
               <div class="block-23 mb-3">
                 <ul>
-                  <li><span class="icon icon-map-marker"></span><span class="text">203 Main Street,
-                      Tabarbour, Amman, Jordan</span></li>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Aqaba Jordan ,street said-darwesh 234</span></li>
                   <li><a href="#"><span class="icon icon-phone"></span><span class="text">+03 201 3467
                       </span></a></li>
                   <li><a href="#"><span class="icon icon-envelope"></span><span

@@ -78,7 +78,7 @@
                     <button type="submit" class="btn btn-primary">Create an account</button>
                 </div>
 
-                <div class="mb-2">Already a member? <a href="login.html"><span style="color: #fd7e14;"> Log in </span> </a></div>
+                <div class="mb-2">Already a member? <a href="login"><span style="color: #fd7e14;"> Log in </span> </a></div>
 
               
 

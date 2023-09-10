@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,7 +69,7 @@
                     <button type="submit" class="btn btn-primary">Log in</button>
                 </div>
 
-                <div class="mb-2">Don’t have an account? <a href="register.html"><span style="color: #fd7e14;">sign up</span></a></div>
+                <div class="mb-2">Don’t have an account? <a href="signup"><span style="color: #fd7e14;">sign up</span></a></div>
 
              
 
