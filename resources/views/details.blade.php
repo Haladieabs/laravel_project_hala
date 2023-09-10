@@ -28,5 +28,20 @@
 <br><br>
 
 
-<button style="font-size: xx-large">Booking now </button>
+<button style="font-size: xx-large" id="bookButton">Booking now </button>
+<script>
+    document.getElementById('bookButton').addEventListener('click', function () {
+        // التحقق من ما إذا كان المستخدم مسجلاً
+        if ({{ Auth::check() ? 'true' : 'false' }}) {
+            // المستخدم مسجل الدخول
+            // قم بإرسال النموذج للحجز إلى الخادم
+            document.querySelector('form').submit();
+        } else {
+            // المستخدم غير مسجل الدخول
+            // قم بتوجيهه إلى صفحة تسجيل الدخول
+            window.location.href = "{{ route('signup') }}";
+        }
+    });
+</script>
+
 @endsection
