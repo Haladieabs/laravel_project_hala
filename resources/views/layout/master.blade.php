@@ -42,10 +42,14 @@
             <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
             <li class="nav-item"><a href="about" class="nav-link">ABOUT US</a></li>
             <li class="nav-item"><a href="contact" class="nav-link">CONTACT US</a></li>
+            @if(session('name'))
+            <li class="nav-item"><a href="{{route('logout')}}" class="nav-link">LOGOUT</a></li>
+            <li class="nav-item cta"><a href="book" class="nav-link">BOOK NOW</a></li>
+            @else
             <li class="nav-item"><a href="login" class="nav-link">LOGIN</a></li>
             <li class="nav-item"><a href="signup" class="nav-link">REGISTER</a></li>
-            <li class="nav-item cta"><a href="book" class="nav-link">BOOK NOW</a></li>
-  
+
+            @endif
           </ul>
         </div>
       </div>

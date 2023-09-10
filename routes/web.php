@@ -3,6 +3,7 @@
 use App\Models\users;
 
 use App\Http\Controllers\signup;
+use App\Http\Controllers\logIn_controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TripsController;
 use App\Http\Controllers\UsersController;
@@ -86,9 +87,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+
 
 
 
@@ -135,9 +134,18 @@ Route::post('/update/{id}',[UsersController::class, 'update']);
 //sign up toutes
 Route::get('/signup', [signup::class , 'index'])->name('signup');
 Route::post('/store' , [signup::class , 'store'])->name('store');
-
-
-
+//end sigup
+//log in routes
+Route::get('/login', [logIn_controller::class , 'index'])->name('login');
+Route::post('/login' , [logIn_controller::class , 'check'])->name('check');
+//end login
+//logout
+Route::get('/logout' , function(){
+    if(session()->has('name')){
+        session()->pull('name');
+    }
+    return redirect()->route('login');
+})->name('logout');
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\users;
 use App\Models\signups;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -27,9 +28,13 @@ class signup extends Controller
         $user_data->Lname = $data_input['lname'];
         $user_data->email = $data_input['email'];
         $user_data->phone = $data_input['phone'];
-        $user_data->password = Crypt::encrypt($data_input['password']);        
+        $user_data->password = bcrypt($data_input['password']);        
         $user_data->save();
-        return redirect()->route('home');
+
+        return redirect()->route('login');
+
+        
     }
+   
 
 }

@@ -5,7 +5,6 @@
 
 @section('page')
 
-
 <div class="hero-wrap js-fullheight"
 		style="background-image: url('images/celsus-library-ephesus-ancient-city-izmir-turkey.jpg');"
 		data-stellar-background-ratio="0.5">

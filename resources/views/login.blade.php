@@ -43,17 +43,24 @@
             <h1 class="title" style="color: #fd7e14;">Login</h1>
             <p class="caption mb-4">Please enter your login details to sign in.</p>
 
-            <form action="#" class="pt-3">
+            <form action="{{route('login')}}" method="post" class="pt-3">
+                @csrf
                 <div class="form-floating">
                     <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email">
+                    @if ($errors->has('email'))
+                    <p class="alert alert-danger ">{{ $errors->first('email') }}</p>
+                    @endif
                     
                 </div>
 
                 <div class="form-floating">
                     <span class="password-show-toggle js-password-show-toggle" style="margin-top: 2rem;"><span class="uil"></span></span>
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your Password">
+                    <input type="password" class="form-control" id="password" placeholder="Enter your Password" name="password">
+                    @if ($errors->has('password'))
+                    <p class="alert alert-danger ">{{ $errors->first('password') }}</p>
+                    @endif
                     
                 </div>
 
