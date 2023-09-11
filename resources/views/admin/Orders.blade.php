@@ -65,7 +65,7 @@
 											<th class="cell">id</th>
 											<th class="cell">reservation_date</th>
 											<th class="cell">user_name</th>
-											<th class="cell">trip_id</th>
+											<th class="cell">trip_name</th>
 											<th class="cell">payment_status</th>
 											<th class="cell"></th>
 										</tr>
@@ -76,14 +76,16 @@
 										<tr>
 											<td class="cell">{{$i->id}}</td>
 											<td class="cell"><span class="truncate">{{$i->reservation_date}}</span></td>
-											<td class="cell">{{$i->user->name }}</td>
+											<td class="cell">{{$i->user->Fname }}</td>
 											<td class="cell"><span class="note">{{$i->trip->trip_name }}</span></td>
-											<td class="cell"><span class="note"> @if($i->payment_status) Paid @else Pending @endif</span></td>
+											<td class="cell"><span class="note">  @if($i->payment_status) Paid @else Pending @endif</span></td>
 
 
 											<td class="cell">
 												<a class="btn btn-danger btn-sm" role="button" href="{{'deleteRes/id/'.$i->id}}">Delete</a>
 												<a class="btn btn-success btn-sm" role="button" data-toggle="modal" data-target="{{'#cc'.$i->id}}">Update</a>
+
+												
 												<div class="btn-group dropend">
 													<button type="button" class="btn app-btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 														payment_status
@@ -176,7 +178,7 @@
 					<label>Choose a user:</label>
 					<select name="user_id">
 						@foreach($data2 as $x)
-						<option value="{{$x->id}}">{{$x->name}}</option>
+						<option value="{{$x->id}}">{{$x->Fname}}</option>
 						@endforeach
 					</select>
 					<br><br>

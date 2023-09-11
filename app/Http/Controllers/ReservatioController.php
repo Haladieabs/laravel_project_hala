@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\reservation;
-use App\Models\User;
+use App\Models\users;
 use App\Models\trips;
 
 use Illuminate\Http\Request;
@@ -15,8 +15,8 @@ class ReservatioController extends Controller
      */
     public function index()
     {
-        $data = reservation::with(['user:id,name', 'trip:id,trip_name'])->get();
-        $data2= User::all();
+        $data = reservation::with(['users:id,Fname', 'trip:id,trip_name'])->get();
+        $data2= users::all();
         $data3= trips::all();
 
         return view('admin.Orders', compact('data','data2','data3'));  

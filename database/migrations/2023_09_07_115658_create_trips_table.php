@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('details' , 255);
             $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
+            $table->string('href' , 255);
         });
     }
 

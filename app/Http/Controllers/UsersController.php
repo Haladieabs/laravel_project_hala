@@ -10,6 +10,8 @@ class UsersController extends Controller
    
     public function user()
     {
+
+        
         $user = users::where('id', 1)->get();
 
         return view('user', ['user' => $user]);
@@ -24,9 +26,16 @@ class UsersController extends Controller
     }
 
    
-    public function create()
+    public function createA(Request $request)
     {
-        //
+        $usr = new users();
+        $usr->Fname    = $request->input('user_fname');
+        $usr->Lname    = $request->input('user_lname');
+        $usr->password    = $request->input('user_pass');
+        $usr->email    = $request->input('user_email');
+        $usr->phone    = $request->input('user_phone');
+        $usr->save();
+        return redirect('/AdminUser');
     }
 
     /**
@@ -40,11 +49,34 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(users $users)
+    public function show()
     {
         //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function editA($id, $status)
+    {
+        $usr = users::find($id);
+        $usr->is_admin= $status;
+        $usr->update();
+        return redirect('/AdminUser');    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id)
+    {
+        $usr = users::find($id);
+        $usr->delete();
+        return redirect('/AdminUser');    }
    
 //     public function update(Request $request, $id)
 // {

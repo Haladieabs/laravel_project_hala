@@ -63,6 +63,7 @@ class CategoryController extends Controller
             $img->move(public_path('assetsAdmin/images'), $imgname);
             $cat->category_picture = $imgname;
         }
+        
         $cat->update();
         return redirect('/AdminCategories');
     }

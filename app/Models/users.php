@@ -11,4 +11,9 @@ class users extends Model
     protected $table = 'users';
     protected $fillable = ['Fname' , 'Lname' , 'password' , 'email' , 'phone' , 'payment_status'];
 
+    public function reservations()
+    {
+        return $this->hasMany(reservation::class);
+    }
+
 }
