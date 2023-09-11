@@ -96,7 +96,7 @@
     <tbody>
 
 
-        @foreach ($trips as $trip) 
+        {{-- @foreach ($trips as $trip) 
         
         <tr>
             <td>{{$trip->trip_name}}</td>
@@ -107,7 +107,7 @@
             <td>{{$trip->photo}}</td>
         </tr>
 
-    @endforeach
+    @endforeach --}}
 
 
     </tbody>
