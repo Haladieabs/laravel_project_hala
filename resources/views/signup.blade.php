@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-floating">
                     <label for="email">Phone Number</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter your Email" name="phone">
+                    <input type="text" class="form-control" id="email" placeholder="Enter your phone" name="phone">
                     @if ($errors->has('phone'))
                     <p class="alert alert-danger ">{{ $errors->first('phone') }}</p>
                     @endif

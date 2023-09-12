@@ -168,3 +168,6 @@ Route::post('/search' , [search_controller::class , 'search'])->name('search');
 //     return view('book');
 // })->name('book');
 Route::get('/home', [search_controller::class , 'destroy'])->name('home');
+Route::get('/' , function(){
+    return view('home');
+})->name('home');

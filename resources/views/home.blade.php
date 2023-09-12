@@ -6,7 +6,7 @@
 @section('page')
 
 <div class="hero-wrap js-fullheight"
-		style="background-image: url('celsus-library-ephesus-ancient-city-izmir-turkey.jpg');"
+		style="background-image: url('images/celsus-library-ephesus-ancient-city-izmir-turkey.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -125,13 +125,7 @@
     </section>
 
 
-	{{-- ------------------------------------------------------------------------------------ --}}
-
 		<section class="ftco-section">
-
-			
-				
-			
     	<div class="container">
     		<div class="row justify-content-center pb-4">
           <div class="col-md-12 heading-section text-center ftco-animate">
@@ -139,37 +133,52 @@
           </div>
         </div>
 
-
+		
         <div class="row">
-			@foreach ($cat as $cat)
-
         	<div class="col-md-3 ftco-animate">
         		<div class="project-destination">
-        			<a href="{{$cat->href}}" class="img" style="background-image: url({{$cat->category_picture}});">
+        			<a href="archaeological" class="img" style="background-image: url(myimg/place1.jpg);">
         				<div class="text">
-        					<h3>{{$cat->category_name}}</h3>
+        					<h3>Archaeological Tours</h3>
         					<span>View All Tours</span>
         				</div>
         			</a>
         		</div>
         	</div>
-    
-			@endforeach
-
+        	<div class="col-md-3 ftco-animate">
+        		<div class="project-destination">
+        			<a href="medical" class="img" style="background-image: url(myimg/dead_sea.jpg);">
+        				<div class="text">
+        					<h3>Medical Tourism</h3>
+        					<span>View All Tours</span>
+        				</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="project-destination">
+        			<a href="enjoyment" class="img" style="background-image: url(myimg/saraya-aqaba-waterpark.jpg);">
+        				<div class="text">
+        					<h3>Enjoyment Tours</h3>
+        					<span>View All Tours</span>
+        				</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="project-destination">
+        			<a href="religious" class="img" style="background-image: url(myimg/Mount-Nebo-7.jpg);">
+        				<div class="text">
+        					<h3>Religious Tours </h3>
+        					<span>View All Tours</span>
+        				</div>
+        			</a>
+        		</div>
+        	</div>
+        </div>
+    	</div>
     </section>
 
-
-
-
-	{{-- ============================================================================ --}}
-
-
-
-
-
-
-
-	
     <section class="ftco-section ftco-no-pt">
     	<div class="container">
     		<div class="row justify-content-center pb-4">

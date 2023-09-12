@@ -33,13 +33,13 @@ class CategoryController extends Controller
     }
 
   
-    public function categ()
-    {
-        $cat = category::all();
+    // public function categ()
+    // {
+    //     $cat = category::all();
 
        
-        return view('home')->with('cat', $cat);
-    }
+    //     return view('home' , ['cat' => $cat]);
+    // }
 
     /**
      * Display the specified resource.

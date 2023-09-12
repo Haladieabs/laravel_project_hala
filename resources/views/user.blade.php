@@ -107,7 +107,7 @@
                 <td>120</td>
                 <td>5</td>
                 <td>20</td>
-                <td><img src="myimg/petra.jpg" alt="photo" height="150px"></td>
+                <td><img src="myimg/petra.jpg" alt="photo" height="120px"></td>
             </tr>
           </tbody>
     </table>    

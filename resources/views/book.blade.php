@@ -199,7 +199,7 @@
 
 
     @foreach ($trips as $trip)
- 
+    <div style="display: flex;flex-wrap:wrap;">
     <div class="row">
         <div class="col-md-4 ftco-animate">
             <div class="project-wrap">
@@ -218,6 +218,8 @@
             </div>
         </div>
     @endforeach
+</div>
+    
 
 
 

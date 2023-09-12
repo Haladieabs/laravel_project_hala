@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('payment_status')->nullable();
             $table->tinyInteger('is_admin')->default(0);            
             $table->timestamps();
+            $table->string('photo')->default('myimg/me.jpg');
         });
     }
 
