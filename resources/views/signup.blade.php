@@ -106,6 +106,7 @@
                 </div>
 
                 <div class="mb-2">Already a member? <a href="login"><span style="color: #fd7e14;"> Log in </span> </a></div>
+                <div class="mb-2">Already a member? <a href="{{route('login')}}"><span style="color: #fd7e14;"> Log in </span> </a></div>
 
               
 

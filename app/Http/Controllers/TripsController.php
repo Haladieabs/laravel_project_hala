@@ -109,15 +109,17 @@ class TripsController extends Controller
     public function usertrup(Request $req)
 {
 
-    $id = $req->trip_id;
-    $trip = trips::find($id); 
+    // $id = $req->trip_id;
+    // $trip = trips::find($id)->get()->first(); 
 
-    if (!$trip) {
+    // if (!$trip) {
        
-        return "somthing wrong .!";
-    }
+    //     return "somthing wrong .!";
+    // }
     
-    return redirect('user')->with('trips', $trip);
+
+    
+    return view('user');
 }
 
 

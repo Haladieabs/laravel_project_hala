@@ -23,7 +23,7 @@
                         
                     </div>
 
-                    <form  action="usertrup" method="POST">
+                    <form  action="user" method="get">
                         @csrf
                         <input type="hidden" name="trip_id" value="{{ $trip->id }}">
                         {{-- <input type="hidden" name="user_id" value="{{ 1 }}"> --}}

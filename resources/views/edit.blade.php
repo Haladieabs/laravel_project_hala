@@ -87,7 +87,7 @@ body {
     
        <form action="/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="text" name="name" class="form-input" value="{{$user->name}}" required>
+        <input type="text" name="name" class="form-input" value="{{$user->Fname}}" required>
         <div class="filling-bar"></div>
         <input type="email" name="email" class="form-input" value="{{$user->email}}" required>
         <div class="filling-bar"></div>

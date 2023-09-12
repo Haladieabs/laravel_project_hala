@@ -20,8 +20,7 @@
   </div>
 </div>
 
-
-
+<div style="display: flex;flex-wrap: wrap;">
 @foreach ( $trips as $trips)
 
 
@@ -50,7 +49,7 @@
 
 @endforeach
 
-
+</div>
 
 </section>
 
