@@ -59,6 +59,11 @@
 						<div class="app-card-body">
 							<div class="table-responsive">
 								<table class="table app-table-hover mb-0 text-left">
+								@if (session('error1'))
+							<div class="alert alert-danger m-5">
+								{{ session('error1') }}
+							</div>
+							@endif
 									<thead>
 										<tr>
 											<th class="cell">id</th>

@@ -15,11 +15,11 @@ class ReservatioController extends Controller
      */
     public function index()
     {
-        $data = reservation::with(['users:id,Fname', 'trip:id,trip_name'])->get();
-        $data2= users::all();
-        $data3= trips::all();
+        $data = reservation::with(['user:id,Fname', 'trip:id,trip_name'])->get();
+        $data2 = users::all();
+        $data3 = trips::all();
 
-        return view('admin.Orders', compact('data','data2','data3'));  
+        return view('admin.Orders', compact('data', 'data2', 'data3'));
     }
 
     /**
@@ -29,10 +29,10 @@ class ReservatioController extends Controller
     {
         //
         $res = new reservation();
-        $res->reservation_date=$request->input('reservation_date');
-        $res->user_id =$request->input('user_id');
-        $res->trip_id =$request->input('trip_id');
-        $res->payment_status=$request->input('payment_status');
+        $res->reservation_date = $request->input('reservation_date');
+        $res->user_id = $request->input('user_id');
+        $res->trip_id = $request->input('trip_id');
+        $res->payment_status = $request->input('payment_status');
 
         $res->save();
         return redirect('/AdminOrders');
@@ -61,11 +61,9 @@ class ReservatioController extends Controller
     {
         //
         $res = reservation::find($id);
-        $res->payment_status= $status;
+        $res->payment_status = $status;
         $res->update();
         return redirect('/AdminOrders');
-
-
     }
 
     /**
@@ -74,13 +72,13 @@ class ReservatioController extends Controller
     public function update(Request $request, reservation $reservatio)
     {
         //
-        $id= $request->input('id');
+        $id = $request->input('id');
         $res = reservation::find($id);
-        if($request->input('reservation_date')){
+        if ($request->input('reservation_date')) {
             // dd($request->input('reservation_date'));
-        $res->reservation_date= $request->input('reservation_date');
-        $res->update();
-    }
+            $res->reservation_date = $request->input('reservation_date');
+            $res->update();
+        }
         return redirect('/AdminOrders');
     }
 
@@ -91,5 +89,25 @@ class ReservatioController extends Controller
     {
         $res = reservation::find($id);
         $res->delete();
-        return redirect('/AdminOrders');    }
+        return redirect('/AdminOrders');
+    }
+
+
+    public function total()
+    {
+        $reservations = reservation::with('trip')->get();
+        $totalPrice=0;
+        foreach ($reservations as $reservation) {
+            $tripPrice = $reservation->trip->price;
+            $totalPrice  = $totalPrice + $tripPrice ; 
+        }
+        $data = $totalPrice;
+        $data2 = reservation::count();
+        $data3 = users::count();
+        return view('admin.Index', compact('data','data2', 'data3'));
+
+
+
+
+    }
 }

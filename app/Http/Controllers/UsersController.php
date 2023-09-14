@@ -3,14 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\users;
+use App\Models\reservation;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
    
-    public function user()
+    public function index()
     {
+     $data= users::all();
+     return view('admin.Users',compact('data'));
+ 
+}
 
+    public function user(){
+        $user = Auth::user();
+        return view('user', compact('user'));
+
+    }
+    public function userAdmin(){
+        $user = Auth::user();
+        return view('admin.Account', compact('user'));
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create(Request $request){
         
         $user = users::where('id', 1)->get();
 
@@ -31,7 +53,7 @@ class UsersController extends Controller
         $usr = new users();
         $usr->Fname    = $request->input('user_fname');
         $usr->Lname    = $request->input('user_lname');
-        $usr->password    = $request->input('user_pass');
+        $usr->password    = bcrypt($request->input('user_pass'));
         $usr->email    = $request->input('user_email');
         $usr->phone    = $request->input('user_phone');
         $usr->save();
@@ -75,6 +97,12 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $usr = users::find($id);
+        $relatedRes = reservation::where('user_id', $usr->id)->count();
+
+        if ($relatedRes > 0) {
+            // There are related trips, so display an error message
+            return redirect()->back()->with('error1', 'Cannot delete this user until all related reservation are deleted.');
+        }
         $usr->delete();
         return redirect('/AdminUser');    }
    
@@ -138,5 +166,12 @@ public function update(Request $request, $id)
     $user->save();
 
     return redirect('user');
+}
+
+public function logoutAdmin(){
+    if(session()->has('admin')){
+        session()->pull('admin');
+    }
+    return redirect('admin');
 }
 }

@@ -52,7 +52,11 @@
 
 			<br>
 
-
+			@if (session('error1'))
+							<div class="alert alert-danger m-5">
+								{{ session('error1') }}
+							</div>
+							@endif
 			<div class="tab-content" id="orders-table-tab-content">
 				<div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
 					<div class="app-card app-card-orders-table shadow-sm mb-5">
@@ -149,7 +153,7 @@
 										<input type="text" name='user_lname'>
 										<br><br>
 										<label for="">Password</label>
-										<input type="number" name='user_pass'>
+										<input type="text" name='user_pass'>
 										<br><br>
 										<label for="">Email</label>
 										<input type="email" name='user_email'>
