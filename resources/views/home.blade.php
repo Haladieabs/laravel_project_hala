@@ -5,7 +5,7 @@
 
 @section('page')
 
-<div class="hero-wrap js-fullheight"
+{{-- <div class="hero-wrap js-fullheight"
 		style="background-image: url('images/celsus-library-ephesus-ancient-city-izmir-turkey.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -23,8 +23,72 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
+	{{-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="images/petra33.jpg" class="d-block w-100" alt="..." style="">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/pppppppp.png" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/jordan.jpg" class="d-block w-100" alt="...">
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div> --}}
+	  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="images/petra33.jpg" class="d-block w-100" alt="...">
+			<div class="carousel-caption">
+			  <h1 style="color: white;">Make Your Tour of Jordan Amazing</h1>
+			  <p style="color: white;">Travel to any corner in Jordan, without going around in circles</p>
+			  <div class="text-center">
+				<a href="book" class="btn btn-primary">View All Tours</a>
+			</div>
+			</div>
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/Screenshot.png" class="d-block w-100" alt="...">
+			<div class="carousel-caption">
+			  <h1 style="color: white;">Make Your Tour of Jordan Amazing</h1>
+			  <p style="color: white;">Travel to any corner in Jordan, without going around in circles</p>
+			  <div class="text-center">
+				<a href="book" class="btn btn-primary">View All Tours</a>
+			</div>
+			</div>
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/jordan.jpg" class="d-block w-100" alt="...">
+			<div class="carousel-caption">
+			  <h1 style="color: white;">Make Your Tour of Jordan Amazing</h1>
+			  <p style="color: white;">Travel to any corner in Jordan, without going around in circles</p>
+			  <div class="text-center">
+				<a href="book" class="btn btn-primary">View All Tours</a>
+			</div>
+			</div>
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+	  
 
 	<br> <br>
 
