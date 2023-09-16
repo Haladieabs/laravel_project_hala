@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\trips;
+
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -64,7 +66,7 @@ class CategoryController extends Controller
             $img->move(public_path('assetsAdmin/images'), $imgname);
             $cat->category_picture = $imgname;
         }
-        
+
         $cat->update();
         return redirect('/AdminCategories');
     }
@@ -84,8 +86,14 @@ class CategoryController extends Controller
     {
         //
         $cat = category::find($id);
+        // Check if there are related trips
+        $relatedTrips = trips::where('category_id', $cat->id)->count();
+
+        if ($relatedTrips > 0) {
+            // There are related trips, so display an error message
+            return redirect()->back()->with('error1', 'Cannot delete this category until all related trips are deleted.');
+        }
         $cat->delete();
         return redirect('/AdminCategories');
-
     }
 }

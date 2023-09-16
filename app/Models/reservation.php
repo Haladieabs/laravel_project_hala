@@ -16,7 +16,7 @@ class reservation extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(users::class);
     }
 
     // Define the many-to-one relationship with Trip

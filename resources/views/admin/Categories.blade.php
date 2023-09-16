@@ -58,7 +58,13 @@
 				<div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
 					<div class="app-card app-card-orders-table shadow-sm mb-5">
 						<div class="app-card-body">
+							
 							<div class="table-responsive">
+							@if (session('error1'))
+							<div class="alert alert-danger m-5">
+								{{ session('error1') }}
+							</div>
+							@endif
 								<table class="table app-table-hover mb-0 text-left">
 									<thead>
 										<tr>
@@ -84,7 +90,7 @@
 												<td class="cell">$678.26</td> -->
 											<td class="cell">
 												<a class="btn btn-danger btn-sm" role="button" href="{{'deleteCat/id/'.$i->id}}">Delete</a>
-												<a class="btn btn-success btn-sm" role="button"  data-toggle="modal" data-target="{{'#exampleModalCenter'.$i->id}}">Update</a>
+												<a class="btn btn-success btn-sm" role="button" data-toggle="modal" data-target="{{'#exampleModalCenter'.$i->id}}">Update</a>
 												<!-- <a class="btn-sm app-btn-secondary" href="#">delete</a> -->
 												<!-- <div class="btn-group"> -->
 											</td>
@@ -143,6 +149,7 @@
 								</button>
 							</div>
 							<div class="modal-body">
+
 								<form action="addCat" method="Post" enctype="multipart/form-data">
 									@csrf <label for="">name</label>
 									<input type="text" name='cat_name'>

@@ -81,7 +81,6 @@
       <a href="edit" class="edit-button">Edit</a>
   </div>
 
-  @endforeach
 
   <div>
     
